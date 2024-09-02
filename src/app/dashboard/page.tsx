@@ -6,6 +6,7 @@ import DataPill from './components/DataPill';
 import PotsSection from './components/PotsSection';
 import data from '../../../public/assets/data.json';
 import TransactionsSection from './components/TransactionsSection';
+import BudgetsSection from './components/BudgetsSection';
 
 export default function Dashboard() {
   return (
@@ -24,6 +25,7 @@ export default function Dashboard() {
       </section>
       <PotsSection />
       <TransactionsSection transactions={data.transactions} />
+      <BudgetsSection budgets={data.budgets} />
     </main>
   );
 }

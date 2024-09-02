@@ -1,7 +1,6 @@
 import Card from '@/components/Card';
-import React from 'react';
-import Transaction, { TransactionType } from './Transaction';
 import Separator from './Separator';
+import Transaction, { TransactionType } from './Transaction';
 
 type Props = { transactions: TransactionType[] };
 
