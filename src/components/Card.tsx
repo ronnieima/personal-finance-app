@@ -1,14 +1,21 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import React, { createContext, PropsWithChildren } from 'react';
 
 const CardContext = createContext(null);
 
-export default function Card({ children }: PropsWithChildren) {
+type CardProps = { children: React.ReactNode; className?: string };
+export default function Card({ children, className }: CardProps) {
   return (
     <CardContext.Provider value={null}>
-      <section className="py-6 px-5 bg-white rounded-xl flex flex-col gap-5">
+      <section
+        className={cn(
+          'py-6 px-5 bg-white rounded-xl flex flex-col gap-5',
+          className
+        )}
+      >
         {children}
       </section>
     </CardContext.Provider>

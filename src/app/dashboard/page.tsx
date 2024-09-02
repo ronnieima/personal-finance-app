@@ -5,6 +5,7 @@ import React from 'react';
 import DataPill from './components/DataPill';
 import PotsSection from './components/PotsSection';
 import data from '../../../public/assets/data.json';
+import TransactionsSection from './components/TransactionsSection';
 
 export default function Dashboard() {
   return (
@@ -22,6 +23,7 @@ export default function Dashboard() {
         <DataPill label="Expenses" value={data.balance.expenses} />
       </section>
       <PotsSection />
+      <TransactionsSection transactions={data.transactions} />
     </main>
   );
 }
