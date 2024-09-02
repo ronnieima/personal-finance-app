@@ -3,8 +3,8 @@
 import { cn } from '@/lib/utils';
 import React from 'react';
 import DataPill from './components/DataPill';
-import Link from 'next/link';
-import Card from '@/components/Card';
+import PotsSection from './components/PotsSection';
+import data from '../../../public/assets/data.json';
 
 export default function Dashboard() {
   return (
@@ -13,18 +13,15 @@ export default function Dashboard() {
     >
       <h1 className="text-preset-1">Overview</h1>
       <section className="space-y-3">
-        <DataPill label="Current Balance" value="$4836.00" invertColor />
-        <DataPill label="Current Balance" value="$4836.00" />
-        <DataPill label="Current Balance" value="$4836.00" />
+        <DataPill
+          label="Current Balance"
+          value={data.balance.current}
+          variant="dark"
+        />
+        <DataPill label="Income" value={data.balance.income} />
+        <DataPill label="Expenses" value={data.balance.expenses} />
       </section>
-
-      <Card>
-        <Card.Header>
-          <Card.Title>Pots</Card.Title>
-          <Card.Action href={'/'}>See Details</Card.Action>
-        </Card.Header>
-        <DataPill label="Total Saved" value="$850" invertColor />
-      </Card>
+      <PotsSection />
     </main>
   );
 }
