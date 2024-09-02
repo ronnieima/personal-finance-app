@@ -15,4 +15,7 @@
   h4: {
     @apply text-[14px] leading-[150%] tracking-[0px];
   }
+  p: {
+    @apply text-[12px] leading-[150%] tracking-[0px];
+  }
 }
