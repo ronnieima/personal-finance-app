@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Public_Sans } from 'next/font/google';
 import './globals.css';
 import Footer from '@/components/Footer';
+import { cn } from '@/lib/utils';
 
 const publicSans = Public_Sans({ subsets: ['latin'] });
 
@@ -17,9 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={publicSans.className}>
+      <body
+        className={cn('xl:grid xl:grid-cols-[1fr_4fr] ', publicSans.className)}
+      >
         {children}
-        <Footer />
+        <Footer className="xl:order-1" />
       </body>
     </html>
   );

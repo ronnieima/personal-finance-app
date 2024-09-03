@@ -12,7 +12,7 @@ export type BudgetType = {
 export default function BudgetsSection({ budgets }: { budgets: BudgetType[] }) {
   const budgetLimit = budgets.reduce((total, curr) => total + curr.maximum, 0);
   return (
-    <Card>
+    <Card className="xl:col-span-5 xl:col-start-8 xl:row-start-1 xl:row-span-2">
       <Card.Header>
         <Card.Title>Budgets</Card.Title>
         <Card.Action href="/budgets">See Details</Card.Action>

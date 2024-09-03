@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 
 export default function PotsSection() {
   return (
-    <Card>
+    <Card className="xl:col-span-7 xl:row-span-1 xl:col-start-1">
       <Card.Header>
         <Card.Title>Pots</Card.Title>
         <Card.Action href={'/'}>See Details</Card.Action>
