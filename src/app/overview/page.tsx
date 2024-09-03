@@ -1,12 +1,12 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import React from 'react';
+import data from '../../../public/assets/data.json';
+import BudgetsSection from './components/BudgetsSection';
 import DataPill from './components/DataPill';
 import PotsSection from './components/PotsSection';
-import data from '../../../public/assets/data.json';
+import RecurringBillsSection from './components/RecurringBillsSection';
 import TransactionsSection from './components/TransactionsSection';
-import BudgetsSection from './components/BudgetsSection';
 
 export default function Dashboard() {
   return (
@@ -26,6 +26,7 @@ export default function Dashboard() {
       <PotsSection />
       <TransactionsSection transactions={data.transactions} />
       <BudgetsSection budgets={data.budgets} />
+      <RecurringBillsSection recurringBills={data.transactions} />
     </main>
   );
 }
