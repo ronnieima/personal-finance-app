@@ -14,7 +14,7 @@ export default function Dashboard() {
       className={cn('px-4 py-8 flex flex-col gap-8 bg-beige-100 min-h-screen')}
     >
       <h1 className="text-preset-1">Overview</h1>
-      <section className="space-y-3">
+      <section className={cn('flex flex-col gap-3', 'md:flex-row md:gap-6')}>
         <DataPill
           label="Current Balance"
           value={data.balance.current}

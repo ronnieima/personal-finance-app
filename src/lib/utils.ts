@@ -6,9 +6,9 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const pages = [
-  'overview',
-  'transactions',
-  'budgets',
-  'pots',
-  'recurring-bills',
+  { label: 'Overview', value: 'overview' },
+  { label: 'Transactions', value: 'transactions' },
+  { label: 'Budgets', value: 'budgets' },
+  { label: 'Pots', value: 'pots' },
+  { label: 'Recurring Bills', value: 'recurring-bills' },
 ];

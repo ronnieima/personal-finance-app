@@ -8,7 +8,6 @@ export default function RecurringBillsSection({
 }: {
   recurringBills: TransactionType[];
 }) {
-  console.log(recurringBills);
   return (
     <Card>
       <Card.Header>

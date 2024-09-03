@@ -10,7 +10,7 @@ type Props = {
 export default function DataPill({ label, value, variant }: Props) {
   return (
     <div
-      className={cn('bg-white rounded-xl p-5 space-y-3', {
+      className={cn('bg-white rounded-xl p-5 space-y-3 w-full', {
         'bg-grey-900 text-white': variant === 'dark',
         'bg-beige-100': variant === 'beige',
       })}
