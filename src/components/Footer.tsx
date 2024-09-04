@@ -11,9 +11,9 @@ export default function Footer({ className }: { className: string }) {
   return (
     <footer
       className={cn(
-        'bg-grey-900 rounded-t-xl h-[52px] pt-2 px-4',
+        'bg-grey-900 rounded-t-xl h-[52px] pt-2 px-4  bottom-0 w-full fixed',
         'md:px-10 md:h-[74px]',
-        'xl:h-full xl:rounded-t-none xl:rounded-r-xl xl:px-0 xl:pr-6 xl:flex-col xl:flex xl:gap-6 xl:justify-start xl:pb-14',
+        'xl:h-full xl:rounded-t-none xl:rounded-r-xl xl:px-0 xl:pr-6 xl:flex-col xl:flex xl:gap-6 xl:justify-start xl:pb-14 xl:static',
         className
       )}
     >
@@ -64,7 +64,7 @@ export default function Footer({ className }: { className: string }) {
           );
         })}
       </nav>
-      <div className="px-8 py-4">
+      <div className="px-8 py-4 hidden xl:block">
         <div className="flex items-center gap-4">
           <img src="/assets/images/icon-minimize-menu.svg" className="size-5" />
           <span className="text-grey-300 text-preset-3">Minimize Menu</span>

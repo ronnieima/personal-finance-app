@@ -8,14 +8,9 @@ import PotsSection from './components/PotsSection';
 import RecurringBillsSection from './components/RecurringBillsSection';
 import TransactionsSection from './components/TransactionsSection';
 
-export default function Dashboard() {
+export default function OverviewPage() {
   return (
-    <main
-      className={cn(
-        'px-4 py-8 flex flex-col gap-8 bg-beige-100 min-h-screen',
-        'xl:order-2 xl:px-10'
-      )}
-    >
+    <>
       <h1 className="text-preset-1">Overview</h1>
       <section className={cn('flex flex-col gap-3', 'md:flex-row md:gap-6')}>
         <DataPill
@@ -37,6 +32,6 @@ export default function Dashboard() {
         <BudgetsSection budgets={data.budgets} />
         <RecurringBillsSection recurringBills={data.transactions} />
       </div>
-    </main>
+    </>
   );
 }

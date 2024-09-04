@@ -1,7 +1,6 @@
 import Card from '@/components/Card';
-import Separator from './Separator';
-import Transaction, { TransactionType } from './Transaction';
-import React from 'react';
+import { TransactionType } from './Transaction';
+import TransactionList from './TransactionList';
 
 type Props = { transactions: TransactionType[] };
 
@@ -13,15 +12,7 @@ export default function TransactionsSection({ transactions }: Props) {
         <Card.Action href="/transactions">View All</Card.Action>
       </Card.Header>
       <div className="space-y-5">
-        {transactions.map(
-          (transaction, index) =>
-            index < 5 && (
-              <React.Fragment key={transaction.name}>
-                <Transaction transaction={transaction} />
-                <Separator />
-              </React.Fragment>
-            )
-        )}
+        <TransactionList transactions={transactions} limit={5} />
       </div>
     </Card>
   );

@@ -41,6 +41,22 @@ const config: Config = {
       white: '#FFFFFF',
     },
     extend: {
+      fontSize: {
+        'preset-1': [
+          '32px',
+          { lineHeight: '120%', letterSpacing: '0px', fontWeight: '700' },
+        ],
+        'preset-2': [
+          '20px',
+          { lineHeight: '120%', letterSpacing: '0px', fontWeight: '700' },
+        ],
+        'preset-3': [
+          '16px',
+          { lineHeight: '150%', letterSpacing: '0px', fontWeight: '700' },
+        ],
+        'preset-4': ['14px', { lineHeight: '150%', letterSpacing: '0px' }],
+        'preset-5': ['12px', { lineHeight: '150%', letterSpacing: '0px' }],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

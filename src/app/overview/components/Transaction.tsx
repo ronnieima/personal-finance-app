@@ -10,11 +10,12 @@ export type TransactionType = {
   recurring: boolean;
 };
 
-export default function Transaction({
-  transaction,
-}: {
+type Props = {
   transaction: TransactionType;
-}) {
+  showCategory?: boolean;
+};
+
+export default function Transaction({ transaction, showCategory }: Props) {
   const isPositive = transaction.amount > 0;
   const date = new Date(transaction.date).toLocaleDateString('en-GB', {
     day: '2-digit',
@@ -29,7 +30,16 @@ export default function Transaction({
     <div className="flex justify-between">
       <div className="flex items-center gap-4">
         <img src={transaction.avatar} className="rounded-full size-8" />
-        <p className="text-preset-4 font-bold">{transaction.name}</p>
+        <div className="flex flex-col">
+          <p className="text-preset-4 font-bold">{transaction.name}</p>
+          <span
+            className={cn('text-preset-5 text-sm text-grey-500 hidden', {
+              block: showCategory,
+            })}
+          >
+            {transaction.category}
+          </span>
+        </div>
       </div>
       <div className="flex flex-col items-end justify-center">
         <span

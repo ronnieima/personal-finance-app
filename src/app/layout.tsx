@@ -17,11 +17,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-beige-100">
       <body
         className={cn('xl:grid xl:grid-cols-[1fr_4fr] ', publicSans.className)}
       >
-        {children}
+        <main
+          className={cn(
+            'px-4 py-6 flex flex-col gap-8 bg-beige-100 min-h-screen pb-[76px]',
+            'md:px-10 md:py-8',
+            'xl:order-2 xl:px-10'
+          )}
+        >
+          {children}
+        </main>
         <Footer className="xl:order-1" />
       </body>
     </html>
