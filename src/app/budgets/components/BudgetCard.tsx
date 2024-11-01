@@ -5,7 +5,6 @@ import React from 'react';
 import data from '@/../public/assets/data.json';
 import dayjs from 'dayjs';
 import Link from 'next/link';
-import Separator from '@/app/overview/components/Separator';
 
 type Props = {
   budget: {
