@@ -33,19 +33,22 @@ export default function TransactionsPage() {
       <Card className=" gap-6 md:p-8">
         <header className="flex  gap-6">
           <Input placeholder="Search transaction" />
-          <div className="">
-            <Label className="hidden">Sort by</Label>
+          <div className="flex gap-1">
+            <Label className="hidden md:block">Sort by</Label>
             <Select>
-              <SelectTrigger className="w-[180px] hidden  md:flex">
-                <SelectValue placeholder="Latest" />
+              <SelectTrigger className="w-[180px] ">
+                <SelectValue placeholder="Latest" className="hidden md:flex" />
+              </SelectTrigger>
+              <SelectTrigger className="">
+                <img src="/assets/images/icon-sort-mobile.svg" />
               </SelectTrigger>
 
               <SelectContent>
                 <SelectGroup>
                   <SelectItem value="latest">Latest</SelectItem>
                   <SelectItem value="oldest">Oldest</SelectItem>
-                  <SelectItem value="a-to-z">A-to-z</SelectItem>
-                  <SelectItem value="z-to-a">Z-to-a</SelectItem>
+                  <SelectItem value="a-to-z">A-to-Z</SelectItem>
+                  <SelectItem value="z-to-a">Z-to-A</SelectItem>
                   <SelectItem value="highest">Highest</SelectItem>
                   <SelectItem value="lowest">Lowest</SelectItem>
                 </SelectGroup>
