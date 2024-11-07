@@ -29,7 +29,10 @@ export default function OverviewPage() {
       >
         <PotsSection />
         <TransactionsSection transactions={data.transactions} />
-        <BudgetsSection budgets={data.budgets} />
+        <BudgetsSection
+          budgets={data.budgets}
+          transactions={data.transactions}
+        />
         <RecurringBillsSection recurringBills={data.transactions} />
       </div>
     </>

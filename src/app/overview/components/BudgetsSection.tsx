@@ -2,6 +2,11 @@ import Card from '@/components/Card';
 import React from 'react';
 import Pot from './Pot';
 import { cn } from '@/lib/utils';
+import { Doughnut } from 'react-chartjs-2';
+import DonutChart from './DonutChart';
+import { Chart, ArcElement, Tooltip } from 'chart.js';
+import { TransactionType } from './Transaction';
+Chart.register(ArcElement, Tooltip);
 
 export type BudgetType = {
   category: string;
@@ -9,8 +14,13 @@ export type BudgetType = {
   theme: string;
 };
 
-export default function BudgetsSection({ budgets }: { budgets: BudgetType[] }) {
-  const budgetLimit = budgets.reduce((total, curr) => total + curr.maximum, 0);
+export default function BudgetsSection({
+  budgets,
+  transactions,
+}: {
+  budgets: BudgetType[];
+  transactions: TransactionType[];
+}) {
   return (
     <Card className="xl:col-span-5 xl:col-start-8 xl:row-start-1 xl:row-span-2">
       <Card.Header>
@@ -18,16 +28,12 @@ export default function BudgetsSection({ budgets }: { budgets: BudgetType[] }) {
         <Card.Action href="/budgets">See Details</Card.Action>
       </Card.Header>
       <div className={cn('flex flex-col', 'md:grid md:grid-cols-[4fr_1fr]')}>
-        <div className="flex justify-center items-center flex-col">
-          <span className="text-preset-1 font-bold">$338</span>
-          <span className="text-preset-5 text-grey-500">
-            of ${budgetLimit} limit
-          </span>
-        </div>
+        <DonutChart budgets={budgets} transactions={transactions} />
+
         <div
           className={cn(
-            'flex flex-col flex-wrap max-h-[102px] gap-3',
-            'md:flex-nowrap'
+            'flex flex-col justify-center flex-wrap max-h-[102px] gap-3',
+            'md:flex-nowrap md:max-h-full'
           )}
         >
           {budgets.map((budget) => (
