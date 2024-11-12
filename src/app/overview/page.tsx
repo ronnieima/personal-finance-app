@@ -9,6 +9,7 @@ import RecurringBillsSection from './components/RecurringBillsSection';
 import TransactionsSection from './components/TransactionsSection';
 
 export default function OverviewPage() {
+  const { pots, balance, transactions, budgets } = data;
   return (
     <>
       <h1 className="text-preset-1">Overview</h1>

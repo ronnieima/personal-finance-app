@@ -16,7 +16,7 @@ export default function BudgetsPage() {
     )
   );
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       <header className="flex justify-between items-center">
         <h1 className="text-preset-1">Budgets</h1>
         <Button className="bg-grey-900 h-14 text-white">

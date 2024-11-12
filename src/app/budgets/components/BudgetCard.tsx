@@ -86,7 +86,13 @@ export default function BudgetCard({ budget }: Props) {
             return (
               <React.Fragment key={i}>
                 <div className="text-preset-5 flex justify-between items-center">
-                  <span className="font-bold">{transaction.name}</span>
+                  <div className="flex items-center gap-2">
+                    <div
+                      className="size-8 rounded-full"
+                      style={{ background: '#FFFFFF' }}
+                    ></div>
+                    <span className="font-bold">{transaction.name}</span>
+                  </div>
                   <div className="flex flex-col text-right gap-1">
                     <span className="font-bold">
                       -${Math.abs(transaction.amount).toFixed(2)}
